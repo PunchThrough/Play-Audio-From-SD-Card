@@ -2,7 +2,8 @@
   This sketch uses a LightBlue Bean to play an audio file from an SD card. 
   
   In the example, a LightBlue Bean is put in an elevator and plays an alarm
-  as soon as the elevator moves.
+  as soon as the elevator moves. Make sure that the Bean's front is facing 
+  up when running the sketch.
     
   This example code is in the public domain.
 */
@@ -32,11 +33,10 @@ void setup(){
 
 void loop(){
   // Get the current acceleration with range of ±2g, and a conversion of 3.91×10-3 g/unit or 0.03834(m/s^2)/units. 
-  AccelerationReading acceleration = Bean.getAcceleration();
+  int acceleration = Bean.getAccelerationZ();
   
-  Serial.println(acceleration.zAxis);
   // Check if the elevator is moving
-  if(acceleration.zAxis > upperThreshold || acceleration.zAxis < lowerThreshold){
+  if(acceleration > upperThreshold || acceleration < lowerThreshold){
      //Wait for a few seconds
     delay(3000);
     
@@ -47,4 +47,3 @@ void loop(){
   }
   Bean.sleep(100);
 }
-
