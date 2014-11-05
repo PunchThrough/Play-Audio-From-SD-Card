@@ -37,10 +37,10 @@ void loop(){
   Serial.println(acceleration.zAxis);
   // Check if the elevator is moving
   if(acceleration.zAxis > upperThreshold || acceleration.zAxis < lowerThreshold){
-     //Wait for three seconds
+     //Wait for a few seconds
     delay(3000);
+    
     // Play the audio file
-
     tmrpcm.play("alarm.wav");
     // Wait for 15 seconds before we check the accelerometer again
     delay(15000);
