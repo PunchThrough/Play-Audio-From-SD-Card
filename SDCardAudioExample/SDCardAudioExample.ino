@@ -1,8 +1,8 @@
 /* 
   This sketch uses a LightBlue Bean to play an audio file from an SD card. 
   
-  In the example, a LightBlue Bean is put in an elevator and plays an alarm
-  as soon as the elevator moves. Make sure that the Bean's front is facing 
+  In the example, a LightBlue Bean is put in an elevator and plays an fart
+  sound as soon as the elevator moves. Make sure that the Bean's front is facing 
   up when running the sketch.
     
   This example code is in the public domain.
@@ -41,7 +41,7 @@ void loop(){
     delay(3000);
     
     // Play the audio file
-    tmrpcm.play("alarm.wav");
+    tmrpcm.play("fart.wav");
     // Wait for 15 seconds before we check the accelerometer again
     delay(15000);
   }
